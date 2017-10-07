@@ -1,9 +1,9 @@
-package parkingLotApp;
+package model;
 
 public class Demo {
 
 	public static void main(String[] args) {
-//		Ticket ticket = new Ticket(new ParkingSpace(),new Car("81424"));
+//		  Ticket ticket = new Ticket(new ParkingSpace(),new Car("81424"));
 //        Ticket ticket1 = new Ticket(new ParkingSpace(), new Car("123141"));
 //        System.out.println(ticket.getTicketPrice());
 //        TicketBag ticketBag = new TicketBag();
@@ -11,17 +11,17 @@ public class Demo {
 //        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace());
 
 		
-		TicketBag ticketBag = new TicketBag();
-		Ticket ticket = new Ticket(new ParkingSpace(),new Car("81424"));
-        Ticket ticket1 = new Ticket(new ParkingSpace(), new Bus("123141"));
-        ticketBag.add(ticket);
-        ticketBag.add(ticket1);
-        ticketBag.display();
-////        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
+		  TicketBag ticketBag = new TicketBag();
+		  Ticket ticket = new Ticket(new ParkingSpace(),new Car("81424"));
+          Ticket ticket1 = new Ticket(new ParkingSpace(), new Bus("123141"));
+          ticketBag.add(ticket);
+          ticketBag.add(ticket1);
+          ticketBag.display();
+//        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
 //        ticket.getParkingSpace().park();
-////        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
+//        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
 //        ticket.getParkingSpace().leaveParkingSpace(10);
-////        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
+//        System.out.println(ticketBag.findByLiscensePlate("81424").getParkingSpace().isParked());
 //        ticket.calculatePrice();
 //        System.out.println(ticket.getTicketPrice());
 //        ParkingSpace r = new ParkingSpace();

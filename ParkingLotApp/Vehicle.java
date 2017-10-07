@@ -1,4 +1,4 @@
-package parkingLotApp;
+package model;
 
 public interface Vehicle {
 
