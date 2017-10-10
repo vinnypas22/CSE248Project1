@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class ManagerPane {
@@ -21,16 +22,13 @@ public class ManagerPane {
 	private ObservableList<String> emptySpots;
 	private Text ticketNumber;
 	private Text licensePlate;
-	private Text parkingSpot;
+	private Text vehicleType;
 	private Text spotNumber;
-	private Text hourlyRate;
-	private Text availibility;
+	private Text headerText;
 	private Button backButton;
-	private HBox buttonBox;
-	private VBox ticketTextBox;
-	private VBox ticketBox;
-	private VBox spotTextBox;
-	private VBox spotsBox;
+	private HBox activeTicketBox;
+	private VBox textBox;
+	private HBox emptyTicketBox;
 	private Scene scene;
 	private VBox pane;
 	
@@ -41,35 +39,29 @@ public class ManagerPane {
 		activeTicketsOptions = FXCollections.observableArrayList();
 		activeTicketComboBox = new ComboBox(activeTicketsOptions);
 		spotsComboBox = new ComboBox(emptySpots); 
+		headerText = new Text("Active/Empty spots:");
+		headerText.setFont(new Font(30));
 		ticketNumber = new Text();
 		licensePlate = new Text();
-		parkingSpot = new Text();
 		spotNumber = new Text();
-		hourlyRate = new Text();
-		availibility = new Text();
+		vehicleType = new Text();
 		backButton = new Button("Back");
-		buttonBox = new HBox();
-		buttonBox.getChildren().addAll(activeTicketButton, emptySpotsButton);
-		buttonBox.setAlignment(Pos.CENTER);
-		buttonBox.setSpacing(20);
-		ticketTextBox = new VBox();
-		ticketTextBox.getChildren().addAll(ticketNumber, licensePlate, parkingSpot, spotNumber);
-		ticketTextBox.setAlignment(Pos.CENTER);
-		ticketTextBox.setSpacing(20);
-		ticketBox = new VBox();
-		ticketBox.getChildren().addAll(activeTicketComboBox, ticketTextBox);
-		ticketBox.setAlignment(Pos.CENTER);
-		ticketBox.setSpacing(20);
-		spotTextBox = new VBox();
-		spotTextBox.getChildren().addAll(hourlyRate, availibility);
-		spotTextBox.setAlignment(Pos.CENTER);
-		spotTextBox.setSpacing(20);
-		spotsBox = new VBox();
-		spotsBox.getChildren().addAll(spotsComboBox, spotTextBox);
-		spotsBox.setAlignment(Pos.CENTER);
-		spotsBox.setSpacing(20);
+		activeTicketBox = new HBox();
+		activeTicketBox.getChildren().addAll(activeTicketButton, activeTicketComboBox);
+		activeTicketBox.setAlignment(Pos.CENTER_LEFT);
+		activeTicketBox.setSpacing(20);
+		textBox = new VBox();
+		textBox.getChildren().addAll(ticketNumber, licensePlate, spotNumber, vehicleType);
+		textBox.setAlignment(Pos.CENTER);
+		textBox.setSpacing(20);
+		emptyTicketBox = new HBox();
+		emptyTicketBox.getChildren().addAll(emptySpotsButton, spotsComboBox);
+		emptyTicketBox.setAlignment(Pos.CENTER_LEFT);
+		emptyTicketBox.setSpacing(20);
 		pane = new VBox();
-		pane.getChildren().addAll(buttonBox, ticketTextBox, ticketBox, spotTextBox, spotsBox, backButton);
+		pane.getChildren().addAll(headerText, activeTicketBox, textBox, emptyTicketBox, backButton);
+		pane.setAlignment(Pos.CENTER);
+		pane.setSpacing(20);
 		scene = new Scene(pane, 400, 400);
 	}
 
@@ -89,12 +81,16 @@ public class ManagerPane {
 		return activeTicketsOptions;
 	}
 
-	public ComboBox<String> getSpotsComboBox() {
+	public ComboBox<String> spotsComboBox() {
 		return spotsComboBox;
 	}
 
 	public ObservableList<String> getEmptySpots() {
 		return emptySpots;
+	}
+
+	public Text getHeaderText() {
+		return headerText;
 	}
 
 	public Text getTicketNumber() {
@@ -105,44 +101,28 @@ public class ManagerPane {
 		return licensePlate;
 	}
 
-	public Text getParkingSpot() {
-		return parkingSpot;
-	}
-
 	public Text getSpotNumber() {
 		return spotNumber;
 	}
-
-	public Text getHourlyRate() {
-		return hourlyRate;
-	}
-
-	public Text getAvailibility() {
-		return availibility;
-	}
 	
-	public Button getBackButton(){
+	public Text getVehicleType(){
+		return vehicleType;
+	}
+
+	public Button getBackButton() {
 		return backButton;
 	}
 
-	public HBox getButtonBox() {
-		return buttonBox;
+	public HBox getActiveTicketBox() {
+		return activeTicketBox;
 	}
 
-	public VBox getTicketTextBox() {
-		return ticketTextBox;
+	public VBox getTextBox() {
+		return textBox;
 	}
 
-	public VBox getTicketBox() {
-		return ticketBox;
-	}
-
-	public VBox getSpotTextBox() {
-		return spotTextBox;
-	}
-
-	public VBox getSpotsBox() {
-		return spotsBox;
+	public HBox getEmptyTicketBox() {
+		return emptyTicketBox;
 	}
 
 	public Scene getScene() {

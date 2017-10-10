@@ -27,6 +27,7 @@ public class ManagerController {
 	                managerPane.getTicketNumber().setText("Ticket number: " + String.valueOf(ticketTemp.getTicketNum()));
 	                managerPane.getLicensePlate().setText("License Plate number: " + ticketTemp.getVehicle().getLiscensePlate());
 	                managerPane.getSpotNumber().setText("Space number: " + ticketTemp.getParkingSpace().getSpotNum());
+	                managerPane.getVehicleType().setText("Vehicle Type: " + ticketTemp.getVehicle().getVehicleType());
 	                }
 
 

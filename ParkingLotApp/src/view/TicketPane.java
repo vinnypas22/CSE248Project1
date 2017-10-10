@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class TicketPane {
@@ -27,8 +28,9 @@ public class TicketPane {
 	
 	public TicketPane(){
 		buyTicketText = new Text("Buy your Ticket");
+		buyTicketText.setFont(new Font(30));
 		vehicleText = new Text("Please pick your vehicle:");
-		ObservableList<String> vehicleOptions = FXCollections.observableArrayList("Car", "Bus");
+		ObservableList<String> vehicleOptions = FXCollections.observableArrayList("Car $5 per hour", "Bus $15 per hour");
 		vehicleComboBox = new ComboBox<>(vehicleOptions);
 		licensePlate = new Text("Enter your license plate number:");
 		licnesePlateField = new TextField();

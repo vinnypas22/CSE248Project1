@@ -52,32 +52,17 @@ public class CustomerController {
 					licenseErrorAlert.showAndWait();
 				}
 			}
-		});
-		
-		customerPane.getReceiptButton().setOnAction( e->{
-			TextInputDialog textInputDialog = new TextInputDialog();
-			textInputDialog.setContentText("enter license plate number");
-			Optional<String> result = textInputDialog.showAndWait();
-			if(result.isPresent()){	
-				if(result.get().isEmpty()){
-					Alert alert = new Alert(Alert.AlertType.ERROR);
-					alert.setContentText("enter license plate number");
-					alert.showAndWait();
-					textInputDialog.close();
-				} else {
-					Ticket ticket = ticketBag.findByLiscensePlate(result.get()); //paid ticket bag
-					if(ticket == null){
-						Alert alert = new Alert(Alert.AlertType.ERROR);
-						alert.setContentText("couldnt find the ticket");
-						alert.showAndWait();
-					} else {
-						receiptPane.getVehicleText().setText("vehicle type: " + ticket.getVehicle().getVehicleType());
-						receiptPane.getLicenseText().setText("license plate number: " + ticket.getVehicle().getLiscensePlate());
-						receiptPane.getTotalText().setText("Total: " + ticket.getTicketPrice());
-						receiptPane.getParkingSpotText().setText("parking spot number: " + ticket.getParkingSpace().getSpotNum());
-						stage.setScene(receiptPane.getScene());
-					}
-				}
+			stage.setScene(receiptPane.getScene());
+			Ticket ticket = ticketBag.findByLiscensePlate(result.get()); 
+			if(ticket == null){
+				Alert alert1 = new Alert(Alert.AlertType.ERROR);
+				alert1.setContentText("couldnt find the ticket");
+				alert1.showAndWait();
+			} else {
+				receiptPane.getVehicleText().setText("vehicle type: " + ticket.getVehicle().getVehicleType());
+				receiptPane.getLicenseText().setText("license plate number: " + ticket.getVehicle().getLiscensePlate());
+				receiptPane.getTotalText().setText("Total: " + ticket.getTicketPrice());
+				receiptPane.getParkingSpotText().setText("parking spot number: " + ticket.getParkingSpace().getSpotNum());
 			}
 		});
 	}

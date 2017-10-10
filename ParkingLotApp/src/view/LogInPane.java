@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class LogInPane{
@@ -19,6 +20,7 @@ public class LogInPane{
 	
 	public LogInPane(){
 		parkingLotText = new Text("Parking Lot");
+		parkingLotText.setFont(new Font(40));
         chooseText = new Text("Please choose one");
         customerButton = new Button("Customer");
         managerButton = new Button("Manager");

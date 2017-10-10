@@ -4,6 +4,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class ReceiptPane {
@@ -19,6 +20,7 @@ public class ReceiptPane {
 	
 	public ReceiptPane(){
 		receiptText = new Text("Recept:");
+		receiptText.setFont(new Font(30));
 		vehicleText = new Text("Vehicle Type: ");
 		licenseText = new Text("Liscense plate number: ");
 		parkingSpotText = new Text("Parking spot Number: ");
