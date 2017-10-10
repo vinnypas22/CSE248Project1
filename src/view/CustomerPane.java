@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class CustomerPane {
@@ -27,6 +28,7 @@ public class CustomerPane {
 		buttonBox.setAlignment(Pos.CENTER);
 		buttonBox.setSpacing(20);
 		chooseText = new Text("Please choose one");
+		chooseText.setFont(new Font(30));
 		backButton = new Button("Back");
 		pane = new VBox();
 		pane.getChildren().addAll(chooseText, buttonBox, backButton);
